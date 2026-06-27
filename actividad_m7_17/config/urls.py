@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from .views import home
+from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
+    path('', lambda request: redirect('/admin/')),
 ]
